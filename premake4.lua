@@ -68,8 +68,8 @@ solution 'myuv'
         
         files 
         {
-            'src/**.h',
-            'src/**.c',
+            'src/*.h',
+            'src/*.c',
         }
         includedirs
         {
@@ -102,7 +102,7 @@ solution 'myuv'
             'dep/libuv/include/uv-version.h',
             'dep/libuv/include/uv-win.h',
             'dep/libuv/src/fs-poll.c',
-            'dep/libuv/src/heap-inl.c',
+            'dep/libuv/src/heap-inl.h',
             'dep/libuv/src/inet.c',
             'dep/libuv/src/queue.h',
             'dep/libuv/src/uv-common.h',
@@ -136,6 +136,11 @@ solution 'myuv'
         {
             'dep/lua/src/*.h',
             'dep/lua/src/*.c',
+        }
+        excludes
+        {
+            'dep/lua/src/lua.c',
+            'dep/lua/src/luac.c',
         }
         includedirs
         {
