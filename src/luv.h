@@ -38,5 +38,3 @@ INLINE uv_timer_t* luv_create_timer(lua_State* L)
 
 void luv_set_loop(lua_State* L, uv_loop_t* loop);
 uv_loop_t* luv_get_loop(lua_State *L);
-
-int luaopen_timer(lua_State *L);

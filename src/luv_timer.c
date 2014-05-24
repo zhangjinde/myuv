@@ -72,6 +72,7 @@ int luaopen_timer(lua_State *L)
 {
     static const luaL_Reg timerlib[] = 
     {
+        {"new", timer_new},
         {NULL, NULL}
     };
     luaL_newlib(L, timerlib);  /* new module */
