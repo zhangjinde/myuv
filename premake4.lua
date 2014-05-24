@@ -5,7 +5,7 @@
 solution 'myuv'
     configurations {'Debug', 'Release'}            
     targetdir 'bin'
-    platforms {"x64"}
+    platforms {'x32', 'x64'}
     flags {'ExtraWarnings'}
     
     configuration 'Debug'
@@ -20,16 +20,16 @@ solution 'myuv'
         location 'build'
         kind 'ConsoleApp'
         language 'C'
-        uuid "8701594A-72B8-4a6a-AEF3-6B41BBC33E65"
+        uuid '8701594A-72B8-4a6a-AEF3-6B41BBC33E65'
         
         defines
         {
-            "WIN32",
-            "NOMINMAX",
-            "WIN32_LEAN_AND_MEAN",
-            "_WIN32_WINNT=0x0600",
-            "_SCL_SECURE_NO_WARNINGS",
-            "_CRT_SECURE_NO_WARNINGS",
+            'WIN32',
+            'NOMINMAX',
+            'WIN32_LEAN_AND_MEAN',
+            '_WIN32_WINNT=0x0600',
+            '_SCL_SECURE_NO_WARNINGS',
+            '_CRT_SECURE_NO_WARNINGS',
         }
         
         files 
@@ -39,30 +39,33 @@ solution 'myuv'
         }
         includedirs
         {
-            "src",
-            "dep/libuv/include",
-            "dep/lua/src",
+            'src',
+            'dep/libuv/include',
+            'dep/lua/src',
         }
         links 
         {
-            "libuv", 
-            "liblua",
+            'libuv', 
+            'liblua',
+            'ws2_32',
+            'iphlpapi',
+            'psapi',
         }
 
     project 'libuv'
         location 'build'
         kind 'StaticLib'
         language 'C'
-        uuid "CEBF9FA1-2A97-4980-83A1-3B4C39AC7AC8"
+        uuid 'CEBF9FA1-2A97-4980-83A1-3B4C39AC7AC8'
         
         defines
         {
-            "WIN32",
-            "NOMINMAX",
-            "WIN32_LEAN_AND_MEAN",
-            "_WIN32_WINNT=0x0600",
-            "_SCL_SECURE_NO_WARNINGS",
-            "_CRT_SECURE_NO_WARNINGS",
+            'WIN32',
+            'NOMINMAX',
+            'WIN32_LEAN_AND_MEAN',
+            '_WIN32_WINNT=0x0600',
+            '_SCL_SECURE_NO_WARNINGS',
+            '_CRT_SECURE_NO_WARNINGS',
         }
         
         files 
@@ -83,24 +86,24 @@ solution 'myuv'
         }
         includedirs
         {
-            "dep/libuv/include",
-            "dep/libuv/src",
+            'dep/libuv/include',
+            'dep/libuv/src',
         }
         
     project 'liblua'
         location 'build'
         kind 'StaticLib'
         language 'C'
-        uuid "7C0A496A-CCC3-4e4b-AEB1-4AD192BF7D47"
+        uuid '7C0A496A-CCC3-4e4b-AEB1-4AD192BF7D47'
         
         defines
         {
-            "WIN32",
-            "NOMINMAX",
-            "WIN32_LEAN_AND_MEAN",
-            "_WIN32_WINNT=0x0600",
-            "_SCL_SECURE_NO_WARNINGS",
-            "_CRT_SECURE_NO_WARNINGS",
+            'WIN32',
+            'NOMINMAX',
+            'WIN32_LEAN_AND_MEAN',
+            '_WIN32_WINNT=0x0600',
+            '_SCL_SECURE_NO_WARNINGS',
+            '_CRT_SECURE_NO_WARNINGS',
         }
         
         files 
@@ -115,5 +118,5 @@ solution 'myuv'
         }
         includedirs
         {
-            "dep/lua/src",
+            'dep/lua/src',
         }        
