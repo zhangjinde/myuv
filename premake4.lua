@@ -14,45 +14,11 @@ solution 'myuv'
         
     configuration 'Release'
         defines { 'NDEBUG' }
-        flags { 'Symbols', 'Optimize' }
+        flags { 'Symbols', 'Optimize' }           
         
-    project 'unittest'
-        language 'C++'
+    project 'myuv'
         location 'build'
         kind 'ConsoleApp'
-        uuid "AB7D1C15-7A44-41a7-8864-230D8E345608"
-        
-        defines
-        {
-            "WIN32",
-            "NOMINMAX",
-            "WIN32_LEAN_AND_MEAN",
-            "_WIN32_WINNT=0x0600",
-            "_SCL_SECURE_NO_WARNINGS",
-            "_CRT_SECURE_NO_WARNINGS",
-        }
-        files 
-        {
-            'dep/gtest/src/gtest-all.cc',
-            'test/*.h',
-            'test/*.cpp',
-        }
-        includedirs
-        {
-            "src",
-            "dep/gtest",
-            "dep/gtest/include",
-        }
-
-        links 
-        {
-            "libmyuv",
-            "libuv",
-        }
-        
-    project 'libmyuv'
-        location 'build'
-        kind 'StaticLib'
         language 'C'
         uuid "8701594A-72B8-4a6a-AEF3-6B41BBC33E65"
         
@@ -76,6 +42,11 @@ solution 'myuv'
             "src",
             "dep/libuv/include",
             "dep/lua/src",
+        }
+        links 
+        {
+            "libuv", 
+            "liblua",
         }
 
     project 'libuv'
